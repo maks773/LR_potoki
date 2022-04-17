@@ -16,6 +16,7 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
+	class MyThread *myThreadPtr;
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
 };
