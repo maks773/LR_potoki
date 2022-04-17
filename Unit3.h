@@ -1,19 +1,18 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit1H
-#define Unit1H
+#ifndef Unit3H
+#define Unit3H
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 //---------------------------------------------------------------------------
-class MyThread : public TThread
+class MyThread2 : public TThread
 {
 private:
-	class MyThread2 *myThreadPtr2;
+    class MyThread *myThreadPtr;
 protected:
 	void __fastcall Execute();
-
 public:
-	__fastcall MyThread(bool CreateSuspended);
+	__fastcall MyThread2(bool CreateSuspended);
 };
 //---------------------------------------------------------------------------
 #endif

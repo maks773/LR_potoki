@@ -5,6 +5,7 @@
 
 #include "Unit2.h"
 #include "Unit1.h"
+#include "Unit3.h"
 #include "sqlite3.h"
 #include <windows.h>
 #include <iostream>
@@ -23,7 +24,7 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm2::Button1Click(TObject *Sender)
 {
-	  myThreadPtr = new MyThread(false);
+     myThreadPtr = new MyThread(false);
 }
 //---------------------------------------------------------------------------
 
