@@ -32,16 +32,13 @@ __fastcall MyThread::MyThread(bool CreateSuspended)
 void __fastcall MyThread::Execute(){
 
 	  FreeOnTerminate = true;
-	  size = 0;
-	  try {
-		StrToInt(Form2->Edit1->Text); }
-	  catch (...) {
-		MessageBox(GetActiveWindow(), L"Размер блока должен быть натуральным числом", NULL, MB_ICONERROR); return;
-	  }
 
-	  size = StrToInt(Form2->Edit1->Text);
-	  if (size <=0) {
-	  MessageBox(GetActiveWindow(), L"Размер блока должен быть натуральным числом", NULL, MB_ICONERROR); return;
+	  switch (Form2->ComboBox1->ItemIndex) {
+		case 0: size = 512; break;
+		case 1: size = 1024; break;
+		case 2: size = 4096; break;
+		case 3: size = 8192; break;
+	  default: size = 512;
 	  }
 
 	  data = new BYTE[size]; DWORD bytesRead = 1;
@@ -56,6 +53,7 @@ void __fastcall MyThread::Execute(){
 	  MessageBox(GetActiveWindow(), L"Ошибка чтения файла", NULL, MB_ICONERROR); exit(2); }
 
 	  myThreadPtr2 = new MyThread2(false);  Sleep(100); i++;
+	  if (Terminated) break;
 	  }
 
 	  CloseHandle(hDisk);

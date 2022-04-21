@@ -44,6 +44,7 @@ void __fastcall MyThread2::Execute()
 		fprintf(ptrFile, "\n");  }	  }
 						 }
 	fprintf(ptrFile, "\n------------—читан %d-ый блок данных------------\n\n", i);
+	Form2->Label2->Caption = "—читан "+UnicodeString(i)+"-ый блок данных";
 	delete[] data;
 	fclose (ptrFile);
 }

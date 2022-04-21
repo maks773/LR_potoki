@@ -24,7 +24,19 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm2::Button1Click(TObject *Sender)
 {
-     myThreadPtr = new MyThread(false);
+	 Form2->Button2->Enabled = true;
+	 myThreadPtr = new MyThread(false);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm2::ComboBox1Change(TObject *Sender)
+{
+	Form2->Button1->Enabled = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::Button2Click(TObject *Sender)
+{
+	myThreadPtr->Terminate();
 }
 //---------------------------------------------------------------------------
 
